@@ -233,10 +233,10 @@ _rust_lang_config = {
         "max_memory":
         128 * 1024 * 1024,
         "compile_command":
-        "~/.cargo/bin/rustc {src_path} --crate-type bin -o target",
+        "~/.cargo/bin/rustc {src_path} --crate-type bin -o {exe_path}",
     },
     "run": {
-        "command": "./{exe_path}",
+        "command": "{exe_path}",
         "seccomp_rule": "general",
         "env": default_env
     }

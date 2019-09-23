@@ -184,11 +184,11 @@ _rust_lang_config = {
 //APPEND END""",
     "compile": {
         "src_name": "main.rs",
-        "exe_name": "./target",
+        "exe_name": "target",
         "max_cpu_time": 3000,
         "max_real_time": 10000,
         "max_memory": 128 * 1024 * 1024,
-        "compile_command": "rustc main.rs --crate-type bin -o ./target",
+        "compile_command": "rustc {src_path} --crate-type bin -o target",
     },
     "run": {
         "command": "./{exe_path}",

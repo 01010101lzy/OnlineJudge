@@ -234,6 +234,7 @@ _rust_lang_config = {
         128 * 1024 * 1024,
         "compile_command":
         "/usr/bin/cargo/bin/rustc {src_path} --crate-type bin -o {exe_path}",
+        "compile_env": ["CARGO_HOME=/tmp/cargo"],
     },
     "run": {
         "command": "{exe_path}",
@@ -265,6 +266,7 @@ _csharp_lang_config = {
         128 * 1024 * 1024,
         "compile_command":
         "/usr/bin/dotnet-script/dotnet-script publish {src_path} -n main -o ./publish -c release --dll",
+        "compile_env": [],
     },
     "run": {
         "command": "dotnet exec {exe_path}",

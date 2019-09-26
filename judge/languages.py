@@ -233,7 +233,7 @@ _rust_lang_config = {
         "max_memory":
         128 * 1024 * 1024,
         "compile_command":
-        "~/.cargo/bin/rustc {src_path} --crate-type bin -o {exe_path}",
+        "/usr/bin/cargo/bin/rustc {src_path} --crate-type bin -o {exe_path}",
     },
     "run": {
         "command": "{exe_path}",
@@ -264,7 +264,7 @@ _csharp_lang_config = {
         "max_memory":
         128 * 1024 * 1024,
         "compile_command":
-        "dotnet-script publish {src_path} -n main -o ./publish -c release --dll",
+        "/usr/bin/dotnet-script/dotnet-script publish {src_path} -n main -o ./publish -c release --dll",
     },
     "run": {
         "command": "dotnet exec {exe_path}",

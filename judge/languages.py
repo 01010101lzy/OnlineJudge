@@ -237,7 +237,38 @@ _rust_lang_config = {
     },
     "run": {
         "command": "{exe_path}",
-        "seccomp_rule": "general",
+        "seccomp_rule": "c_cpp",
+        "env": default_env
+    }
+}
+
+_csharp_lang_config = {
+    "template":
+    """//PREPEND BEGIN
+//PREPEND END
+
+//TEMPLATE BEGIN
+//TEMPLATE END
+
+//APPEND BEGIN
+//APPEND END""",
+    "compile": {
+        "src_name":
+        "main.csx",
+        "exe_name":
+        "publish/script.dll",
+        "max_cpu_time":
+        3000,
+        "max_real_time":
+        10000,
+        "max_memory":
+        128 * 1024 * 1024,
+        "compile_command":
+        "dotnet-script publish {src_path} -n main -o ./publish -c release --dll",
+    },
+    "run": {
+        "command": "dotnet exec {exe_path}",
+        "seccomp_rule": None,
         "env": default_env
     }
 }
@@ -286,5 +317,11 @@ languages = [
         "name": "Rust",
         "description": "Rust 1.35 (Edition 2018)",
         "content_type": "text/x-rust"
+    },
+    {
+        "config": _csharp_lang_config,
+        "name": "C# Interactive",
+        "description": "Dotnet Core 3.0, dotnet-script",
+        "content_type": "text/x-csharp"
     },
 ]

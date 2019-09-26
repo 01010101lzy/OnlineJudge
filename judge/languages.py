@@ -234,7 +234,8 @@ _rust_lang_config = {
         128 * 1024 * 1024,
         "compile_command":
         "/usr/bin/cargo/bin/rustc {src_path} --crate-type bin -o {exe_path}",
-        "compile_env": ["CARGO_HOME=/tmp/cargo", "RUSTUP_HOME=/tmp/rustup"],
+        "compile_env":
+        ["CARGO_HOME=/usr/bin/cargo", "RUSTUP_HOME=/usr/bin/rustup"],
     },
     "run": {
         "command": "{exe_path}",
